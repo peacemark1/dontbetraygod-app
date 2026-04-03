@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import MobileMenu from "@/components/MobileMenu";
 
 const categories = ["All", "Hoodies", "Tees", "Outerwear", "Accessories"];
 
@@ -42,14 +43,17 @@ export default function Shop() {
         <Link href="/" className="text-xl font-black lowercase tracking-tighter hover:opacity-70 transition-opacity">
           dontbetraygod<span className="text-[var(--brand-accent)]">.</span>
         </Link>
-        <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-black/40">
-          <Link href="/" className="hover:text-black transition-colors">Home</Link>
-          <span className="text-black">Shop</span>
-          <Link href="/shop" className="hover:text-black transition-colors">Account</Link>
-          <div className="relative">
-             <span className="hover:text-black transition-colors">Cart</span>
-             <span className="absolute -top-2 -right-3 w-4 h-4 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px]">0</span>
+        <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-black/40">
+          <div className="hidden md:flex gap-8">
+            <Link href="/" className="hover:text-black transition-colors">Home</Link>
+            <span className="text-black">Shop</span>
+            <Link href="/shop" className="hover:text-black transition-colors">Account</Link>
           </div>
+          <div className="relative flex items-center pr-4">
+             <span className="hover:text-black transition-colors cursor-pointer">Cart</span>
+             <span className="absolute -top-2 -right-1 w-4 h-4 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px]">0</span>
+          </div>
+          <MobileMenu />
         </div>
       </nav>
 
@@ -80,7 +84,7 @@ export default function Shop() {
 
       {/* 🛍️ Product Grid */}
       <section className="px-6 lg:px-12 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-10 md:gap-y-16">
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((p, idx) => (
               <motion.div
@@ -166,8 +170,8 @@ export default function Shop() {
                <li className="hover:text-black transition-colors lowercase mt-2"><Link href="mailto:dontbetraygod1@gmail.com">dontbetraygod1@gmail.com</Link></li>
              </ul>
           </div>
-          <div className="col-span-12 lg:col-span-2 flex justify-end items-end">
-             <p className="text-[8rem] md:text-[10rem] font-black text-black/5 leading-none lowercase select-none">dbg.</p>
+          <div className="col-span-12 lg:col-span-2 flex justify-start md:justify-end items-end mt-12 md:mt-0">
+             <p className="text-6xl md:text-[10rem] font-black text-black/5 leading-none lowercase select-none">dbg.</p>
           </div>
         </div>
       </footer>

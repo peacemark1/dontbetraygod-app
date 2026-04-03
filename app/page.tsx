@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -22,22 +23,25 @@ export default function Home() {
       
       {/* 🧭 Top Navigation */}
       <nav className="fixed top-0 left-0 w-full z-[100] grid grid-cols-12 items-center px-6 py-6 border-b border-black/5 backdrop-blur-md">
-        <div className="col-span-4 flex gap-4 text-[10px] font-bold uppercase tracking-widest text-black/40">
+        <div className="hidden md:flex col-span-4 gap-4 text-[10px] font-bold uppercase tracking-widest text-black/40">
           <Link href="mailto:dontbetraygod1@gmail.com" className="hover:text-black transition-colors">dontbetraygod1@gmail.com</Link>
           <Link href="tel:+233209088648" className="hover:text-black transition-colors">+233209088648</Link>
         </div>
-        <div className="col-span-4 text-center">
+        <div className="col-span-6 md:col-span-4 text-left md:text-center">
           <Link href="/" className="text-xl font-black lowercase tracking-tighter">
             dontbetraygod<span className="text-[var(--brand-accent)]">.</span>
           </Link>
         </div>
-        <div className="col-span-4 flex justify-end gap-6 text-[10px] font-bold uppercase tracking-widest">
-          <Link href="/shop" className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
-          <div className="flex gap-2">
-            <Link href="https://instagram.com/dontbetraygod" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">IG</Link>
-            <Link href="https://twitter.com/dontbetraygod1" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">X</Link>
-            <Link href="https://wa.me/233209088648" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">WA</Link>
+        <div className="col-span-6 md:col-span-4 flex justify-end items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+          <div className="hidden md:flex gap-6 items-center">
+            <Link href="/shop" className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
+            <div className="flex gap-2">
+              <Link href="https://instagram.com/dontbetraygod" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">IG</Link>
+              <Link href="https://twitter.com/dontbetraygod1" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">X</Link>
+              <Link href="https://wa.me/233209088648" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">WA</Link>
+            </div>
           </div>
+          <MobileMenu />
         </div>
       </nav>
 
@@ -54,7 +58,7 @@ export default function Home() {
             <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/30 mb-8 block asterisk">
               [SCROLL DOWN]
             </span>
-            <h1 className="text-[10rem] md:text-[14rem] font-[var(--font-bodoni)] italic leading-[0.7] tracking-tightest mt-4">
+            <h1 className="text-[6rem] md:text-[14rem] font-[var(--font-bodoni)] italic leading-[0.7] tracking-tightest mt-4">
               where
             </h1>
             <div className="flex items-center gap-4 mt-8 translate-x-12">
@@ -104,9 +108,9 @@ export default function Home() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-[8rem] md:text-[11rem] font-bold leading-[0.8] tracking-tightest uppercase mb-4">
+            <h2 className="text-6xl md:text-[11rem] font-bold leading-[0.8] tracking-tightest uppercase mb-4">
               - a style <br/> 
-              <span className="gothic-text text-[var(--brand-green)] text-8xl md:text-9xl block py-4">dbgod</span>
+              <span className="gothic-text text-[var(--brand-green)] text-6xl md:text-9xl block py-4 mt-2">dbgod</span>
             </h2>
             <div className="mt-8 flex flex-col gap-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/30">// FASHION</span>
@@ -123,9 +127,9 @@ export default function Home() {
       </section>
 
       {/* 🤝 2. Partner Strip */}
-      <section className="border-b border-black/5 px-6 lg:px-12 grid grid-cols-6 items-center divide-x divide-black/10 overflow-x-auto no-scrollbar">
+      <section className="border-b border-black/5 px-6 lg:px-12 flex items-center divide-x divide-black/10 overflow-x-auto snap-x snap-mandatory no-scrollbar">
         {partners.map((p, i) => (
-          <div key={i} className="py-12 flex items-center justify-center gap-2 group cursor-pointer hover:bg-black/5 transition-colors min-w-[150px]">
+          <div key={i} className="py-12 flex-1 flex items-center justify-center gap-2 group cursor-pointer hover:bg-black/5 transition-colors min-w-[150px] snap-center">
              <div className="w-2 h-2 rounded-full border border-black group-hover:bg-[var(--brand-accent)] transition-colors" />
              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/60 group-hover:text-black">{p}</span>
           </div>
@@ -136,7 +140,7 @@ export default function Home() {
       <section className="py-32 px-6 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 pt-32">
-             <h3 className="text-8xl md:text-9xl font-bold tracking-tightest uppercase leading-none asterisk">
+             <h3 className="text-6xl md:text-9xl font-bold tracking-tightest uppercase leading-none asterisk">
                It's - about <br/> moments &copy;24
              </h3>
              <p className="mt-12 max-w-xs text-xl font-bold uppercase tracking-widest text-[#FF7F11]">
@@ -178,7 +182,7 @@ export default function Home() {
         
         <div className="col-span-12 lg:col-span-7 lg:offset-1">
            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/30 asterisk">[TESTIMONIAL]</span>
-           <h4 className="text-5xl md:text-7xl font-bold tracking-tightest leading-[1.1] mt-8">
+           <h4 className="text-3xl md:text-7xl font-bold tracking-tightest leading-[1.1] mt-8">
              Finally, a brand that understands modern elegance! The quality is amazing & I always get when I wear my dbGod.
            </h4>
            <div className="mt-12 flex items-center gap-4">
@@ -191,8 +195,8 @@ export default function Home() {
 
       {/* 🧾 5. Bottom Collection Strip */}
       <section className="py-32 px-6 lg:px-12 border-t border-black/5">
-        <div className="flex justify-between items-end mb-16">
-          <h5 className="text-[8rem] font-bold tracking-tightest uppercase asterisk">Collection</h5>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
+          <h5 className="text-6xl md:text-[8rem] font-bold tracking-tightest uppercase asterisk">Collection</h5>
           <div className="flex gap-4 mb-4">
             <span className="w-8 h-[1px] bg-black/10" />
             <span className="text-[10px] font-bold uppercase tracking-widest">Discover dbGod [2025]</span>
@@ -231,7 +235,7 @@ export default function Home() {
             className="flex flex-col gap-12"
           >
             <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[var(--brand-accent)]">Manifesto // Ed/01</span>
-            <h2 className="text-5xl md:text-8xl font-black lowercase tracking-tighter leading-[0.85] max-w-4xl">
+            <h2 className="text-4xl md:text-8xl font-black lowercase tracking-tighter leading-[0.85] max-w-4xl">
               Faith is not <span className="text-outline">fashion</span>. It is identity. Conviction is not <span className="text-outline">quiet</span>. It is worn.
             </h2>
             <p className="max-w-2xl text-lg font-medium leading-relaxed text-black/40 uppercase tracking-widest">
@@ -304,8 +308,8 @@ export default function Home() {
                <li className="hover:text-black transition-colors lowercase mt-2"><Link href="mailto:dontbetraygod1@gmail.com">dontbetraygod1@gmail.com</Link></li>
              </ul>
           </div>
-          <div className="col-span-12 lg:col-span-2 flex justify-end items-end">
-             <p className="text-[8rem] md:text-[10rem] font-black text-black/5 leading-none lowercase select-none">dbg.</p>
+          <div className="col-span-12 lg:col-span-2 flex justify-start md:justify-end items-end mt-12 md:mt-0">
+             <p className="text-6xl md:text-[10rem] font-black text-black/5 leading-none lowercase select-none">dbg.</p>
           </div>
         </div>
       </footer>
