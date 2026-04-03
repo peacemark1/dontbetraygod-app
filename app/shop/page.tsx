@@ -45,7 +45,7 @@ export default function Shop() {
         <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-black/40">
           <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <span className="text-black">Shop</span>
-          <Link href="#" className="hover:text-black transition-colors">Account</Link>
+          <Link href="/shop" className="hover:text-black transition-colors">Account</Link>
           <div className="relative">
              <span className="hover:text-black transition-colors">Cart</span>
              <span className="absolute -top-2 -right-3 w-4 h-4 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px]">0</span>
@@ -150,10 +150,10 @@ export default function Shop() {
           <div className="col-span-6 lg:col-span-2">
              <h5 className="text-[10px] font-black uppercase tracking-widest mb-6 underline decoration-[var(--brand-accent)] decoration-2">Collections</h5>
              <ul className="flex flex-col gap-3 text-[10px] font-medium text-black/40 uppercase tracking-widest">
-               <li className="hover:text-black transition-colors"><Link href="#">Essential Hoodies</Link></li>
-               <li className="hover:text-black transition-colors"><Link href="#">Religious Tees</Link></li>
-               <li className="hover:text-black transition-colors"><Link href="#">Outerwear</Link></li>
-               <li className="hover:text-black transition-colors"><Link href="#">Accessories</Link></li>
+               <li className="hover:text-black transition-colors"><Link href="/shop">Essential Hoodies</Link></li>
+               <li className="hover:text-black transition-colors"><Link href="/shop">Religious Tees</Link></li>
+               <li className="hover:text-black transition-colors"><Link href="/shop">Outerwear</Link></li>
+               <li className="hover:text-black transition-colors"><Link href="/shop">Accessories</Link></li>
              </ul>
           </div>
           <div className="col-span-6 lg:col-span-2">

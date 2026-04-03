@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* 🧾 5. Bottom Collection Strip */}
-      <section id="shop" className="py-32 px-6 lg:px-12 border-t border-black/5">
+      <section className="py-32 px-6 lg:px-12 border-t border-black/5">
         <div className="flex justify-between items-end mb-16">
           <h5 className="text-[8rem] font-bold tracking-tightest uppercase asterisk">Collection</h5>
           <div className="flex gap-4 mb-4">
