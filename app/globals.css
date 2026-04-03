@@ -1,26 +1,146 @@
+/* Don't Betray God — Global Stylesheet (Tailwind 4.0) */
+/* Directives like @theme and @apply are standard for this build. Ignore IDE warnings. */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-bodoni: var(--font-bodoni);
+  --font-space-grotesk: var(--font-space-grotesk);
+  
+  --color-momento-bg: #F2F2F2;
+  --color-momento-accent: #FF7F11;
+  --color-momento-text: #1A1A1A;
+  --color-momento-muted: #7A7A7A;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F5F5F5;
+  --foreground: #0A0A0A;
+  --brand-green: #1C3A2B;
+  --brand-accent: #FF7F11; /* Orange marker from UI */
+  --brand-grey: #6B6B6B;
+  --brand-gold: #C6A85B;
+  --divider: rgba(10, 10, 10, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased selection:bg-[var(--brand-green)] selection:text-white;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv11";
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-black/5 rounded-2xl;
+  }
+  
+  .gothic-text {
+    font-family: var(--font-gothic), serif;
+  }
+
+  .divider-line {
+    @apply border-[0.5px] border-[var(--divider)];
+  }
+
+  .asterisk::before {
+    content: "*";
+    @apply text-[var(--brand-accent)] font-bold mr-2;
+  }
+
+  .tracking-tightest {
+    letter-spacing: -0.05em;
+  }
 }
+
+/* Custom layout utilities */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+@layer utilities {
+  .font-serif-moda {
+    font-family: var(--font-bodoni), serif;
+  }
+  
+  .asymmetric-clip-right {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  }
+  
+  .asymmetric-clip-left {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+    color: transparent;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* 🎞️ Film Grain Animation */
+  @keyframes noise {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-5%, -10%) }
+    20% { transform:translate(-15%, 5%) }
+    30% { transform:translate(7%, -25%) }
+    40% { transform:translate(-5%, 25%) }
+    50% { transform:translate(-15%, 10%) }
+    60% { transform:translate(15%, 0) }
+    70% { transform:translate(0, 15%) }
+    80% { transform:translate(3%, 35%) }
+    90% { transform:translate(-10%, 10%) }
+  }
+
+  .film-grain {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat;
+    animation: noise .2s infinite;
+    opacity: .05;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* 🖱️ Custom Cursor */
+  .custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+  }
+
+  .cursor-glow {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 127, 17, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease;
+  }
+}
+
