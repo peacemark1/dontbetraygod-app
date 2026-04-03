@@ -41,7 +41,7 @@ export default function MobileMenu() {
             </div>
             
             {/* Primary Links */}
-            <div className="flex flex-col gap-8 mt-24 text-6xl font-black tracking-tighter uppercase relative">
+            <div className="flex flex-col gap-8 mt-24 text-4xl font-black tracking-tighter uppercase relative">
               <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[var(--brand-accent)] transition-colors">Home</Link>
               <Link href="/shop" onClick={() => setIsOpen(false)} className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
               <Link href="/shop" onClick={() => setIsOpen(false)} className="hover:text-[var(--brand-accent)] transition-colors">Account</Link>
