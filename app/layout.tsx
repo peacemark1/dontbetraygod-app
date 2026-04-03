@@ -20,8 +20,28 @@ const bodoni = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "Don't Betray God — Wear Your Conviction",
-  description: "Faith is not fashion. It’s identity. Premium, minimal, spiritually grounded footwear and apparel.",
+  title: "DON'T BETRAY GOD — Wear Your Conviction",
+  description: "Faith is not fashion. It’s identity. Premium, minimalist, spiritually grounded apparel for the modern collective. Built on unwavering conviction.",
+  keywords: ["dont betray god", "dbg apparel", "religious streetwear", "faith-based fashion", "luxury hoodies", "minimalist accessories", "spiritual garments"],
+  authors: [{ name: "DBG Collective" }],
+  openGraph: {
+    title: "DON'T BETRAY GOD — Wear Your Conviction",
+    description: "Premium, minimalist, spiritually grounded apparel. Built on unwavering conviction.",
+    url: "https://dontbetraygod.com",
+    siteName: "Don't Betray God",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DON'T BETRAY GOD — Wear Your Conviction",
+    description: "Premium, minimalist, spiritually grounded apparel. Built on unwavering conviction.",
+    creator: "@dontbetraygod1",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 import UXEnhancements from "../components/UXEnhancements";
