@@ -32,7 +32,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="col-span-4 flex justify-end gap-6 text-[10px] font-bold uppercase tracking-widest">
-          <Link href="#shop" className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
+          <Link href="/shop" className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
           <div className="flex gap-2">
             <Link href="https://instagram.com/dontbetraygod" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">IG</Link>
             <Link href="https://twitter.com/dontbetraygod1" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">X</Link>
@@ -75,24 +75,26 @@ export default function Home() {
 
         {/* CENTER: Main Model Portrait */}
         <div className="col-span-12 lg:col-span-4 relative flex items-center justify-center px-4">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full aspect-[3/4] relative overflow-hidden rounded-[2rem] md:rounded-[4rem] group"
-          >
-            <Image 
-              src="/images/editorial/v2_brand_discipline.png" 
-              alt="Don't Betray God Model"
-              fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              priority
-            />
-            {/* Corner arrow button */}
-            <div className="absolute bottom-10 right-10 w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-4xl shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-500">
-              <span className="rotate-45 block">↑</span>
-            </div>
-          </motion.div>
+          <Link href="/shop" className="block w-full">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full aspect-[3/4] relative overflow-hidden rounded-[2rem] md:rounded-[4rem] group"
+            >
+              <Image 
+                src="/images/editorial/v2_brand_discipline.png" 
+                alt="Don't Betray God Model"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                priority
+              />
+              {/* Corner arrow button */}
+              <div className="absolute bottom-10 right-10 w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-4xl shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-500">
+                <span className="rotate-45 block">↑</span>
+              </div>
+            </motion.div>
+          </Link>
         </div>
 
         {/* RIGHT: "- a style dontbetraygod" typography */}
@@ -199,7 +201,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {products.map((p) => (
-             <div key={p.id} className="group cursor-pointer">
+             <Link href="/shop" key={p.id} className="group cursor-pointer">
                 <div className="relative aspect-[3/4] bg-black/5 rounded-[2rem] overflow-hidden mb-6 group-hover:rounded-[3rem] transition-all duration-500">
                    <Image src={p.image} alt={p.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                    <div className="absolute bottom-6 left-6 text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">
@@ -214,7 +216,7 @@ export default function Home() {
                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF7F11]">Lookbook &copy;</span>
                 </div>
                 <div className="w-full h-[1px] bg-black/5 mt-4 group-hover:bg-[var(--brand-accent)] transition-colors" />
-             </div>
+             </Link>
            ))}
         </div>
       </section>
