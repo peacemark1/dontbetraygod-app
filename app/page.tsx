@@ -79,7 +79,7 @@ export default function Home() {
 
         {/* CENTER: Main Model Portrait */}
         <div className="col-span-12 lg:col-span-4 relative flex items-center justify-center px-4">
-          <Link href="/shop" className="block w-full">
+          <Link href="/shop" className="block w-3/4 md:w-full mx-auto">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -139,7 +139,7 @@ export default function Home() {
       {/* 🧾 3. Moments Gallery (Asymmetric) */}
       <section className="py-32 px-6 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 pt-32">
+          <div className="lg:col-span-5 pt-12 md:pt-32">
              <h3 className="text-4xl md:text-9xl font-bold tracking-tightest uppercase leading-none asterisk">
                It's - about <br/> moments &copy;24
              </h3>
@@ -148,7 +148,7 @@ export default function Home() {
              </p>
           </div>
           
-          <div className="lg:col-span-7 grid grid-cols-2 gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 gap-4 md:gap-8 w-full mx-auto">
             <motion.div 
               whileHover={{ y: -20 }}
               className="mt-24 relative aspect-square rounded-[3rem] bg-black/5 overflow-hidden border border-black/5 p-4"
@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* 🗣️ 4. Testimonial Header Section */}
       <section className="py-32 bg-white px-6 lg:px-24 grid grid-cols-12 gap-12 items-center">
-        <div className="col-span-12 lg:col-span-4 relative aspect-square">
+        <div className="col-span-12 lg:col-span-4 relative aspect-square w-2/3 md:w-full mx-auto">
            <div className="absolute inset-0 bg-[var(--brand-accent)] rounded-full translate-x-4 translate-y-4" />
            <div className="relative w-full h-full rounded-full border-[1.5rem] border-white overflow-hidden shadow-2xl">
               <Image src="/images/sharp/black_hoodie.png" alt="Testimonial" fill className="object-cover" />
@@ -203,7 +203,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
           {products.map((p) => (
              <Link href="/shop" key={p.id} className="group cursor-pointer">
                 <div className="relative aspect-[3/4] bg-black/5 rounded-[2rem] overflow-hidden mb-6 group-hover:rounded-[3rem] transition-all duration-500">
