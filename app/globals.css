@@ -13,10 +13,6 @@
   --color-momento-muted: #7A7A7A;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --background: #F5F5F5;
   --foreground: #0A0A0A;
