@@ -139,7 +139,7 @@ export default function Home() {
               <span className="gothic-text text-[var(--brand-green)] text-5xl md:text-9xl block py-4 mt-2">dbgod</span>
             </h2>
             <div className="mt-8 flex flex-col gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/30">// FASHION</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/30">{"// FASHION"}</span>
               <div className="flex items-baseline gap-4">
                 <span className="text-6xl font-bold tracking-tightest">320K</span>
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/40">Influenced <br/> People</span>
@@ -167,7 +167,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 pt-12 md:pt-32">
              <h3 className="text-4xl md:text-9xl font-bold tracking-tightest uppercase leading-none asterisk">
-               It's - about <br/> moments &copy;24
+               It&apos;s - about <br/> moments &copy;24
              </h3>
              <p className="mt-12 max-w-xs text-xl font-bold uppercase tracking-widest text-[#FF7F11]">
                (45%)
@@ -214,7 +214,7 @@ export default function Home() {
            <div className="mt-12 flex items-center gap-4">
               <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">GOLDLINES</span>
               <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">VELOCITY 9</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">"</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">&quot;</span>
            </div>
         </div>
       </section>
@@ -265,7 +265,7 @@ export default function Home() {
               Faith is not <span className="text-outline">fashion</span>. It is identity. Conviction is not <span className="text-outline">quiet</span>. It is worn.
             </h2>
             <p className="max-w-2xl text-lg font-medium leading-relaxed text-black/40 uppercase tracking-widest">
-              Don't Betray God is a declaration. A rejection of the lukewarm. We build garments for those who stand in the gap between the sacred and the street. Every thread is a testimony. Every silhouette is a fortress.
+              Don&apos;t Betray God is a declaration. A rejection of the lukewarm. We build garments for those who stand in the gap between the sacred and the street. Every thread is a testimony. Every silhouette is a fortress.
             </p>
             <div className="flex gap-12 mt-12">
                <div className="flex flex-col gap-2">

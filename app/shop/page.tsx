@@ -142,7 +142,7 @@ export default function Shop() {
                         {p.name}
                       </h3>
                       <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-black/30 mt-1">
-                        {p.category} // DBG021
+                        {p.category}{" // DBG021"}
                       </span>
                    </div>
                    <span className="text-[9px] font-bold uppercase tracking-widest text-[#FF7F11]">Lookbook &copy;</span>

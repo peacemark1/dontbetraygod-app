@@ -1,0 +1,36 @@
+
+> dontbetraygod-app@0.1.0 lint
+> eslint --quiet
+
+
+C:\Users\USER\Downloads\dontbetraygod\dontbetraygod-app\.vercel\output\functions\_global-error.rsc.func\___next_launcher.cjs
+  11:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  46:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\USER\Downloads\dontbetraygod\dontbetraygod-app\.vercel\output\functions\favicon.ico.rsc.func\___next_launcher.cjs
+  11:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  46:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\USER\Downloads\dontbetraygod\dontbetraygod-app\.vercel\output\static\_next\static\chunks\03~yq9q893hmn.js
+  1:24343   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:32078   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:46535   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:81805   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:88512   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:100889  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:101232  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:101754  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:102302  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:102723  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+C:\Users\USER\Downloads\dontbetraygod\dontbetraygod-app\app\page.tsx
+  142:96  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  170:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+  217:95  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  268:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+
+C:\Users\USER\Downloads\dontbetraygod\dontbetraygod-app\app\shop\page.tsx
+  145:37  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Γ£û 19 problems (19 errors, 0 warnings)
+

@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated output directories that should never be linted
+    ".vercel/**",
+    "design-system/**",
   ]),
 ]);
 
