@@ -41,7 +41,7 @@ export default function Shop() {
     <main className="relative min-h-screen bg-[#F5F5F5] text-[#0A0A0A] font-[var(--font-inter)] selection:bg-[#FF7F11] selection:text-white">
       
       {/* 🧭 Top Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-[100] flex md:grid md:grid-cols-12 justify-between items-center px-6 py-6 border-b border-black/5 bg-[#F5F5F5]/80 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 w-full z-[100] flex md:grid md:grid-cols-12 justify-between items-center px-6 py-6 border-b border-black/5 bg-[#F5F5F5]/70 backdrop-blur-2xl saturate-150 transition-all duration-500">
         
         {/* Desktop Left / Mobile Hamburger */}
         <div className="md:hidden flex items-center">

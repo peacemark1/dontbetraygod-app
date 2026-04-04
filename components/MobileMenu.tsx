@@ -19,15 +19,15 @@ export default function MobileMenu() {
         <Menu size={20} strokeWidth={1.5} />
       </button>
 
-      {/* Full Screen Overlay (Light Theme) */}
+      {/* Full Screen Overlay (Liquid Glass Theme) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: "-10%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-10%" }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[200] bg-white flex flex-col px-6 py-6"
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[200] bg-white/70 backdrop-blur-3xl saturate-150 flex flex-col px-6 py-6"
           >
             {/* Header within Menu */}
             <div className="flex justify-between items-center w-full pb-6">
