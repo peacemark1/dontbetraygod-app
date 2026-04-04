@@ -28,6 +28,8 @@ const products = [
   { id: 17, name: "HEAVENLY HEAVYWEIGHT", category: "Hoodies", image: "/images/photo_16_2026-04-03_10-09-18.jpg" }
 ];
 
+import { ShoppingBag } from "lucide-react";
+
 export default function Shop() {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -38,22 +40,39 @@ export default function Shop() {
   return (
     <main className="relative min-h-screen bg-[#F5F5F5] text-[#0A0A0A] font-[var(--font-inter)] selection:bg-[#FF7F11] selection:text-white">
       
-      {/* 🧭 Independent Shop Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-md border-b border-black/5 px-6 lg:px-12 py-6 flex justify-between items-center">
-        <Link href="/" className="text-xl font-black lowercase tracking-tighter hover:opacity-70 transition-opacity">
-          dontbetraygod<span className="text-[var(--brand-accent)]">.</span>
-        </Link>
-        <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-black/40">
-          <div className="hidden md:flex gap-8">
-            <Link href="/" className="hover:text-black transition-colors">Home</Link>
-            <span className="text-black">Shop</span>
-            <Link href="/shop" className="hover:text-black transition-colors">Account</Link>
-          </div>
-          <div className="relative flex items-center pr-4">
-             <span className="hover:text-black transition-colors cursor-pointer">Cart</span>
-             <span className="absolute -top-2 -right-1 w-4 h-4 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px]">0</span>
-          </div>
+      {/* 🧭 Top Navigation */}
+      <nav className="fixed top-0 left-0 w-full z-[100] flex md:grid md:grid-cols-12 justify-between items-center px-6 py-6 border-b border-black/5 bg-[#F5F5F5]/80 backdrop-blur-md">
+        
+        {/* Desktop Left / Mobile Hamburger */}
+        <div className="md:hidden flex items-center">
           <MobileMenu />
+        </div>
+        <div className="hidden md:flex col-span-4 gap-4 text-[10px] font-bold uppercase tracking-widest text-black/40">
+          <Link href="mailto:dontbetraygod1@gmail.com" className="hover:text-black transition-colors">dontbetraygod1@gmail.com</Link>
+          <Link href="tel:+233209088648" className="hover:text-black transition-colors">+233209088648</Link>
+        </div>
+        
+        {/* Logo Center */}
+        <div className="col-span-4 flex justify-center text-center">
+          <Link href="/" className="text-xl font-black lowercase tracking-tighter">
+            dontbetraygod<span className="text-[var(--brand-accent)]">.</span>
+          </Link>
+        </div>
+        
+        {/* Desktop Right / Mobile Cart */}
+        <div className="col-span-4 flex justify-end items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+          <div className="hidden md:flex gap-6 items-center">
+            <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">Home</Link>
+            <span className="text-black">Shop</span>
+            <div className="flex gap-2 ml-4">
+              <Link href="https://instagram.com/dontbetraygod" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">IG</Link>
+              <Link href="https://twitter.com/dontbetraygod1" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">X</Link>
+            </div>
+          </div>
+          <Link href="/shop" className="md:hidden relative flex items-center justify-center hover:opacity-70 transition-opacity">
+            <ShoppingBag size={20} strokeWidth={1.5} />
+            <span className="absolute -top-1 -right-2 w-3.5 h-3.5 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px] font-black">0</span>
+          </Link>
         </div>
       </nav>
 

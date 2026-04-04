@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import MobileMenu from "@/components/MobileMenu";
+import { ShoppingBag } from "lucide-react";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -22,17 +23,26 @@ export default function Home() {
     <main ref={containerRef} className="relative min-h-screen bg-[#F5F5F5] text-[#0A0A0A] font-[var(--font-inter)] selection:bg-[#FF7F11] selection:text-white">
       
       {/* 🧭 Top Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-[100] grid grid-cols-12 items-center px-6 py-6 border-b border-black/5 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 w-full z-[100] flex md:grid md:grid-cols-12 justify-between items-center px-6 py-6 border-b border-black/5 backdrop-blur-md">
+        
+        {/* Desktop Left / Mobile Hamburger */}
+        <div className="md:hidden flex items-center">
+          <MobileMenu />
+        </div>
         <div className="hidden md:flex col-span-4 gap-4 text-[10px] font-bold uppercase tracking-widest text-black/40">
           <Link href="mailto:dontbetraygod1@gmail.com" className="hover:text-black transition-colors">dontbetraygod1@gmail.com</Link>
           <Link href="tel:+233209088648" className="hover:text-black transition-colors">+233209088648</Link>
         </div>
-        <div className="col-span-6 md:col-span-4 text-left md:text-center">
+        
+        {/* Logo Center */}
+        <div className="col-span-4 flex justify-center text-center">
           <Link href="/" className="text-xl font-black lowercase tracking-tighter">
             dontbetraygod<span className="text-[var(--brand-accent)]">.</span>
           </Link>
         </div>
-        <div className="col-span-6 md:col-span-4 flex justify-end items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+        
+        {/* Desktop Right / Mobile Cart */}
+        <div className="col-span-4 flex justify-end items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
           <div className="hidden md:flex gap-6 items-center">
             <Link href="/shop" className="hover:text-[var(--brand-accent)] transition-colors">Shop</Link>
             <div className="flex gap-2">
@@ -41,7 +51,10 @@ export default function Home() {
               <Link href="https://wa.me/233209088648" className="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center text-[8px] hover:bg-black hover:text-white transition-all">WA</Link>
             </div>
           </div>
-          <MobileMenu />
+          <Link href="/shop" className="md:hidden relative flex items-center justify-center hover:opacity-70 transition-opacity">
+            <ShoppingBag size={20} strokeWidth={1.5} />
+            <span className="absolute -top-1 -right-2 w-3.5 h-3.5 bg-[var(--brand-accent)] text-white flex items-center justify-center rounded-full text-[8px] font-black">0</span>
+          </Link>
         </div>
       </nav>
 
@@ -49,7 +62,7 @@ export default function Home() {
       <section className="relative min-h-screen pt-32 px-6 lg:px-12 grid grid-cols-12 gap-0 border-b border-black/5">
         
         {/* LEFT: "where" Typography */}
-        <div className="col-span-12 lg:col-span-4 flex flex-col justify-center pb-20">
+        <div className="hidden lg:flex col-span-12 lg:col-span-4 flex-col justify-center pb-20">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -78,13 +91,13 @@ export default function Home() {
         </div>
 
         {/* CENTER: Main Model Portrait */}
-        <div className="col-span-12 lg:col-span-4 relative flex items-center justify-center px-4">
-          <Link href="/shop" className="block w-3/4 md:w-full mx-auto">
+        <div className="col-span-12 lg:col-span-4 relative flex items-center justify-center px-0 md:px-4">
+          <Link href="/shop" className="block w-full mx-auto relative group">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full aspect-[3/4] relative overflow-hidden rounded-[2rem] md:rounded-[4rem] group"
+              className="w-full aspect-[4/5] md:aspect-[3/4] relative overflow-hidden md:rounded-[4rem]"
             >
               <Image 
                 src="/images/editorial/v2_brand_discipline.png" 
@@ -93,8 +106,21 @@ export default function Home() {
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 priority
               />
-              {/* Corner arrow button */}
-              <div className="absolute bottom-10 right-10 w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-4xl shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-500">
+              
+              {/* Subtle Linear Gradient for Mobile Overlay Clarity */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent lg:hidden" />
+              
+              {/* Minimalist Mobile Text Overlay (FOG Style) */}
+              <div className="absolute bottom-12 left-6 right-6 lg:hidden flex flex-col items-center text-center">
+                 <h2 className="text-white text-3xl font-bold tracking-tight mb-2 uppercase drop-shadow-lg">Faith Identity</h2>
+                 <p className="text-white/80 text-[10px] font-medium uppercase tracking-[0.3em] mb-6 drop-shadow-md">The 2025 Core Collection</p>
+                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-none text-xs font-black uppercase tracking-widest transition-colors active:bg-white active:text-black">
+                   Shop Now
+                 </div>
+              </div>
+
+              {/* Corner arrow button (Desktop Only) */}
+              <div className="hidden lg:flex absolute bottom-10 right-10 w-20 h-20 bg-white rounded-3xl items-center justify-center text-4xl shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-500">
                 <span className="rotate-45 block">↑</span>
               </div>
             </motion.div>
@@ -102,7 +128,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT: "- a style dontbetraygod" typography */}
-        <div className="col-span-12 lg:col-span-4 flex flex-col justify-center lg:pl-16">
+        <div className="hidden lg:flex col-span-12 lg:col-span-4 flex-col justify-center lg:pl-16">
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
